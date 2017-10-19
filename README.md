@@ -60,7 +60,7 @@ class LitecoinController extends Controller
    */
    public function blockInfo()
    {
-      $blockHash = '000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
+      $blockHash = '9d4d9fd2f4dee46d5918861b7bbff81f52c581c3b935ad186fe4c5b6dc58d2f8';
       $blockInfo = litecoind()->getBlock($blockHash);
       return response()->json($blockInfo->get());
    }
@@ -84,7 +84,7 @@ class LitecoinController extends Controller
    */
    public function blockInfo()
    {
-      $blockHash = '000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
+      $blockHash = '9d4d9fd2f4dee46d5918861b7bbff81f52c581c3b935ad186fe4c5b6dc58d2f8';
       $blockInfo = Litecoind::getBlock($blockHash);
       return response()->json($blockInfo->get());
    }
@@ -109,7 +109,7 @@ class LitecoinController extends Controller
    */
    public function blockInfo(LitecoinClient $litecoind)
    {
-      $blockHash = '000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
+      $blockHash = '9d4d9fd2f4dee46d5918861b7bbff81f52c581c3b935ad186fe4c5b6dc58d2f8';
       $blockInfo = $litecoind->getBlock($blockHash);
       return response()->json($blockInfo->get());
    }
