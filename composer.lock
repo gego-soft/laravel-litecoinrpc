@@ -7,16 +7,16 @@
     "content-hash": "d9d21f2ea2103606e57182a40de8db34",
     "packages": [
         {
-            "name": "denpa/php-bitcoinrpc",
+            "name": "majestic/php-litecoinrpc",
             "version": "v2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/denpamusic/php-bitcoinrpc.git",
+                "url": "https://github.com/majestic84/php-litecoinrpc.git",
                 "reference": "84934507624e40c01452c5090f57f92e93db899d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/denpamusic/php-bitcoinrpc/zipball/84934507624e40c01452c5090f57f92e93db899d",
+                "url": "https://api.github.com/repos/majestic84/php-litecoinrpc/zipball/84934507624e40c01452c5090f57f92e93db899d",
                 "reference": "84934507624e40c01452c5090f57f92e93db899d",
                 "shasum": ""
             },
@@ -31,7 +31,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Denpa\\Bitcoin\\": "src"
+                    "Majestic\\Litecoin\\": "src"
                 },
                 "classmap": [
                     "tests"
@@ -43,17 +43,17 @@
             ],
             "authors": [
                 {
-                    "name": "Denis Paavilainen",
-                    "email": "denpa@netfleet.space",
+                    "name": "majestic84",
+                    "email": "southsideprod@hotmail.com",
                     "role": "Developer"
                 }
             ],
-            "description": "Bitcoin JSON-RPC client based on GuzzleHttp",
-            "homepage": "https://github.com/denpamusic/php-bitcoinrpc",
+            "description": "Litecoin JSON-RPC client based on GuzzleHttp",
+            "homepage": "https://github.com/majestic84/php-litecoinrpc",
             "keywords": [
                 "Guzzle",
                 "api",
-                "bitcoin",
+                "litecoin",
                 "jsonrpc"
             ],
             "time": "2017-08-17T11:43:31+00:00"

@@ -1,8 +1,8 @@
 <?php
 
-namespace Denpa\Bitcoin\Providers;
+namespace Majestic\Litecoin\Providers;
 
-use Denpa\Bitcoin\Client as BitcoinClient;
+use Majestic\Litecoin\Client as LitecoinClient;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 class ServiceProvider extends IlluminateServiceProvider
@@ -16,8 +16,8 @@ class ServiceProvider extends IlluminateServiceProvider
     {
         $path = realpath(__DIR__.'/../../config/config.php');
 
-        $this->publishes([$path => config_path('bitcoind.php')], 'config');
-        $this->mergeConfigFrom($path, 'bitcoind');
+        $this->publishes([$path => config_path('litecoind.php')], 'config');
+        $this->mergeConfigFrom($path, 'litecoind');
     }
 
     /**
@@ -40,7 +40,7 @@ class ServiceProvider extends IlluminateServiceProvider
     protected function registerAliases()
     {
         $aliases = [
-            'bitcoind' => 'Denpa\Bitcoin\Client',
+            'litecoind' => 'Majestic\Litecoin\Client',
         ];
 
         foreach ($aliases as $key => $aliases) {
@@ -57,14 +57,14 @@ class ServiceProvider extends IlluminateServiceProvider
      */
     protected function registerClient()
     {
-        $this->app->singleton('bitcoind', function ($app) {
-            return new BitcoinClient([
-                'scheme' => $app['config']->get('bitcoind.scheme', 'http'),
-                'host'   => $app['config']->get('bitcoind.host', 'localhost'),
-                'port'   => $app['config']->get('bitcoind.port', 8332),
-                'user'   => $app['config']->get('bitcoind.user'),
-                'pass'   => $app['config']->get('bitcoind.password'),
-                'ca'     => $app['config']->get('bitcoind.ca'),
+        $this->app->singleton('litecoind', function ($app) {
+            return new LitecoinClient([
+                'scheme' => $app['config']->get('litecoind.scheme', 'http'),
+                'host'   => $app['config']->get('litecoind.host', 'localhost'),
+                'port'   => $app['config']->get('litecoind.port', 8332),
+                'user'   => $app['config']->get('litecoind.user'),
+                'pass'   => $app['config']->get('litecoind.password'),
+                'ca'     => $app['config']->get('litecoind.ca'),
             ]);
         });
     }

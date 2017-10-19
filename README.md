@@ -1,44 +1,42 @@
-# Bitcoin JSON-RPC Service Provider for Laravel
-
-[![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![License](https://poser.pugx.org/denpa/laravel-bitcoinrpc/license)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![Build Status](https://travis-ci.org/denpamusic/laravel-bitcoinrpc.svg)](https://travis-ci.org/denpamusic/laravel-bitcoinrpc) [![Code Climate](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/gpa.svg)](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc) <a href="https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/coverage"><img src="https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/coverage.svg" /></a> [![Dependency Status](https://www.versioneye.com/user/projects/58833bfce25f5900365362cf/badge.svg?style=rounded)](https://www.versioneye.com/user/projects/58833bfce25f5900365362cf)
+# Litecoin JSON-RPC Service Provider for Laravel
 
 ## About
-This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.
-It's based on [php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Bitcoin JSON-RPC client powered by GuzzleHttp.
+This package allows you to make JSON-RPC calls to Litecoin Core JSON-RPC server from your laravel project.
+It's based on [php-litecoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Litecoin JSON-RPC client powered by GuzzleHttp.
 
 ## Installation
-Run ```php composer.phar require denpa/laravel-bitcoinrpc``` in your project directory or add following lines to composer.json
+Run ```php composer.phar require majestic/laravel-litecoinrpc``` in your project directory or add following lines to composer.json
 ```json
 "require": {
-    "denpa/laravel-bitcoinrpc": "^1.1"
+    "majestic/laravel-litecoinrpc": "^1.1"
 }
 ```
 and run ```php composer.phar update```.
 
-Add `Denpa\Bitcoin\Providers\ServiceProvider::class,` line to the providers list somewhere near the bottom of your /config/app.php file.
+Add `Majestic\Litecoin\Providers\ServiceProvider::class,` line to the providers list somewhere near the bottom of your /config/app.php file.
 ```php
 'providers' => [
     ...
-    Denpa\Bitcoin\Providers\ServiceProvider::class,
+    Majestic\Litecoin\Providers\ServiceProvider::class,
 ];
 ```
 
 Publish config file by running
-`php artisan vendor:publish --provider="Denpa\Bitcoin\ServiceProvider"` in your project directory.
+`php artisan vendor:publish --provider="Majestic\Litecoin\ServiceProvider"` in your project directory.
 
 You might also want to add facade to $aliases array in /config/app.php.
 ```php
 'aliases' => [
     ...
-    'Bitcoind' => Denpa\Bitcoin\Facades\Bitcoind::class,
+    'Litecoind' => Majestic\Litecoin\Facades\Litecoind::class,
 ];
 ```
 
 I recommend you to use .env file to configure client.
-To connect to Bitcoin Core you'll need to add at least following parameters
+To connect to Litecoin Core you'll need to add at least following parameters
 ```
-BITCOIND_USER=(rpcuser from bitcoin.conf)
-BITCOIND_PASSWORD=(rpcpassword from bitcoin.conf)
+LITECOIND_USER=(rpcuser from litecoin.conf)
+LITECOIND_PASSWORD=(rpcpassword from litecoin.conf)
 ```
 
 ## Requirements
@@ -46,14 +44,14 @@ BITCOIND_PASSWORD=(rpcpassword from bitcoin.conf)
 * Laravel 5.1 or higher
 
 ## Usage
-You can perform request to Bitcoin Core using any of methods listed below:
+You can perform request to Litecoin Core using any of methods listed below:
 ### Helper Function
 ```php
 <?php
 
 namespace App\Http\Controllers;
 
-class BitcoinController extends Controller
+class LitecoinController extends Controller
 {
   /**
    * Get block info.
@@ -63,7 +61,7 @@ class BitcoinController extends Controller
    public function blockInfo()
    {
       $blockHash = '000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
-      $blockInfo = bitcoind()->getBlock($blockHash);
+      $blockInfo = litecoind()->getBlock($blockHash);
       return response()->json($blockInfo->get());
    }
 }
@@ -75,9 +73,9 @@ class BitcoinController extends Controller
 
 namespace App\Http\Controllers;
 
-use Bitcoind;
+use Litecoind;
 
-class BitcoinController extends Controller
+class LitecoinController extends Controller
 {
   /**
    * Get block info.
@@ -87,7 +85,7 @@ class BitcoinController extends Controller
    public function blockInfo()
    {
       $blockHash = '000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
-      $blockInfo = Bitcoind::getBlock($blockHash);
+      $blockInfo = Litecoind::getBlock($blockHash);
       return response()->json($blockInfo->get());
    }
 }
@@ -99,20 +97,20 @@ class BitcoinController extends Controller
 
 namespace App\Http\Controllers;
 
-use Denpa\Bitcoin\Client as BitcoinClient;
+use Majestic\Litecoin\Client as LitecoinClient;
 
-class BitcoinController extends Controller
+class LitecoinController extends Controller
 {
   /**
    * Get block info.
    *
-   * @param  BitcoinClient  $bitcoind
+   * @param  LitecoinClient  $litecoind
    * @return \Illuminate\Http\JsonResponse
    */
-   public function blockInfo(BitcoinClient $bitcoind)
+   public function blockInfo(LitecoinClient $litecoind)
    {
       $blockHash = '000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
-      $blockInfo = $bitcoind->getBlock($blockHash);
+      $blockInfo = $litecoind->getBlock($blockHash);
       return response()->json($blockInfo->get());
    }
 }
@@ -125,6 +123,6 @@ This product is distributed under MIT license.
 ## Donations
 
 If you like this project,
-you can donate Bitcoins to 13gkVWc3sdzpmCLkGkXXfPBwnh6ZXct947.
+you can donate Litecoins to LKdsQGCwBbgJNdXSQtAvVbFMpwgwThtsSY.
 
 Thanks for your support!❤

@@ -1,12 +1,12 @@
 <?php
 
 use Orchestra\Testbench\TestCase;
-use Denpa\Bitcoin\Traits\Bitcoind;
-use Denpa\Bitcoin\Client as BitcoinClient;
+use Majestic\Litecoin\Traits\Litecoind;
+use Majestic\Litecoin\Client as LitecoinClient;
 
-class BitcoindTest extends TestCase
+class LitecoindTest extends TestCase
 {
-    use Bitcoind;
+    use Litecoind;
 
     /**
      * Get package providers.
@@ -18,7 +18,7 @@ class BitcoindTest extends TestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Denpa\Bitcoin\Providers\ServiceProvider::class,
+            \Majestic\Litecoin\Providers\ServiceProvider::class,
         ];
     }
 
@@ -32,7 +32,7 @@ class BitcoindTest extends TestCase
     protected function getPackageAliases($app)
     {
         return [
-            'Bitcoind' => 'Denpa\Bitcoin\Facades\Bitcoind',
+            'Litecoind' => 'Majestic\Litecoin\Facades\Litecoind',
         ];
     }
 
@@ -44,8 +44,8 @@ class BitcoindTest extends TestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('bitcoind.user', 'testuser');
-        $app['config']->set('bitcoind.password', 'testpass');
+        $app['config']->set('litecoind.user', 'testuser');
+        $app['config']->set('litecoind.password', 'testpass');
     }
 
     /**
@@ -55,7 +55,7 @@ class BitcoindTest extends TestCase
      */
     public function testServiceIsAvailable()
     {
-        $this->assertTrue($this->app->bound('bitcoind'));
+        $this->assertTrue($this->app->bound('litecoind'));
     }
 
     /**
@@ -65,7 +65,7 @@ class BitcoindTest extends TestCase
      */
     public function testFacade()
     {
-        $this->assertInstanceOf(BitcoinClient::class, \Bitcoind::getFacadeRoot());
+        $this->assertInstanceOf(LitecoinClient::class, \Litecoind::getFacadeRoot());
     }
 
     /**
@@ -75,7 +75,7 @@ class BitcoindTest extends TestCase
      */
     public function testHelper()
     {
-        $this->assertInstanceOf(BitcoinClient::class, bitcoind());
+        $this->assertInstanceOf(LitecoinClient::class, litecoind());
     }
 
     /**
@@ -85,34 +85,34 @@ class BitcoindTest extends TestCase
      */
     public function testTrait()
     {
-        $this->assertInstanceOf(BitcoinClient::class, $this->bitcoind());
+        $this->assertInstanceOf(LitecoinClient::class, $this->litecoind());
     }
 
     /**
-     * Test bitcoin config.
+     * Test litecoin config.
      *
      * @return void
      */
     public function testConfig()
     {
-        $config = bitcoind()->getConfig();
+        $config = litecoind()->getConfig();
 
         $this->assertEquals(
-            config('bitcoind.scheme'),
+            config('litecoind.scheme'),
             $config['base_uri']->getScheme()
         );
 
         $this->assertEquals(
-            config('bitcoind.host'),
+            config('litecoind.host'),
             $config['base_uri']->getHost()
         );
 
         $this->assertEquals(
-            config('bitcoind.port'),
+            config('litecoind.port'),
             $config['base_uri']->getPort()
         );
 
-        $this->assertEquals(config('bitcoind.user'), $config['auth'][0]);
-        $this->assertEquals(config('bitcoind.password'), $config['auth'][1]);
+        $this->assertEquals(config('litecoind.user'), $config['auth'][0]);
+        $this->assertEquals(config('litecoind.password'), $config['auth'][1]);
     }
 }
