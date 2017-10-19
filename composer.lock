@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c49f0b3dce9158a5883db3bc6cff601b",
+    "content-hash": "945b472f1a170a99b160a260ea221908",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -623,16 +623,16 @@
         },
         {
             "name": "majestic/php-litecoinrpc",
-            "version": "v2.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/majestic84/php-litecoinrpc.git",
-                "reference": "37041002d6e7b51aca463692c043d8cc58d0aef1"
+                "reference": "f0188a54022b9b04eba9a458be32cba8e850676c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/majestic84/php-litecoinrpc/zipball/37041002d6e7b51aca463692c043d8cc58d0aef1",
-                "reference": "37041002d6e7b51aca463692c043d8cc58d0aef1",
+                "url": "https://api.github.com/repos/majestic84/php-litecoinrpc/zipball/f0188a54022b9b04eba9a458be32cba8e850676c",
+                "reference": "f0188a54022b9b04eba9a458be32cba8e850676c",
                 "shasum": ""
             },
             "require": {
@@ -646,7 +646,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Denpa\\Bitcoin\\": "src"
+                    "Majestic\\Litecoin\\": "src"
                 },
                 "classmap": [
                     "tests"
@@ -658,20 +658,20 @@
             ],
             "authors": [
                 {
-                    "name": "Denis Paavilainen",
-                    "email": "denpa@netfleet.space",
+                    "name": "majestic84",
+                    "email": "southsideprod@hotmail.com",
                     "role": "Developer"
                 }
             ],
-            "description": "Bitcoin JSON-RPC client based on GuzzleHttp",
-            "homepage": "https://github.com/denpamusic/php-bitcoinrpc",
+            "description": "Litecoin JSON-RPC client based on GuzzleHttp",
+            "homepage": "https://github.com/majestic84/php-litecoinrpc",
             "keywords": [
                 "Guzzle",
                 "api",
-                "bitcoin",
-                "jsonrpc"
+                "jsonrpc",
+                "litecoin"
             ],
-            "time": "2017-08-21T07:44:39+00:00"
+            "time": "2017-10-19T20:32:54+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4231,6 +4231,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "majestic/php-litecoinrpc": 20,
         "codeclimate/php-test-reporter": 20
     },
     "prefer-stable": false,
