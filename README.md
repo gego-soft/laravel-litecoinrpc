@@ -2,7 +2,7 @@
 
 ## About
 This package allows you to make JSON-RPC calls to Litecoin Core JSON-RPC server from your laravel project.
-It's based on [php-litecoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Litecoin JSON-RPC client powered by GuzzleHttp.
+It's based on [php-litecoinrpc](https://github.com/majestic84/php-litecoinrpc) project - fully unit-tested Litecoin JSON-RPC client powered by GuzzleHttp.
 
 ## Installation
 Run ```php composer.phar require majestic/laravel-litecoinrpc``` in your project directory or add following lines to composer.json
