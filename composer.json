@@ -1,14 +1,14 @@
 {
-    "name": "majestic/laravel-litecoinrpc",
+    "name": "gego-soft/laravel-litecoinrpc",
     "type": "library",
     "description": "Litecoin JSON-RPC Service Provider for Laravel",
     "keywords": ["laravel","litecoin","api","jsonrpc","guzzle"],
-    "homepage": "https://github.com/majestic84/laravel-litecoinrpc",
+    "homepage": "https://github.com/gego-soft/laravel-litecoinrpc",
     "license": "MIT",
     "authors": [
         {
-            "name": "majestic84",
-            "email": "southsideprod@hotmail.com",
+            "name": "GegoSoft",
+            "email": "info@gegosoft.com",
             "role": "Developer"
         }
     ],
