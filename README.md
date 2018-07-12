@@ -5,7 +5,7 @@ This package allows you to make JSON-RPC calls to Litecoin Core JSON-RPC server 
 
 
 ## Installation
-Run ```composer require gego-sft/laravel-litecoinrpc``` in your project directory or add following lines to composer.json
+Run ```composer require gego-soft/laravel-litecoinrpc``` in your project directory or add following lines to composer.json
 
 ## License
 
