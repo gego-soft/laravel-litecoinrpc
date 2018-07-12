@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4" : {
-            "Majestic\\Litecoin\\": "src/"
+            "Gegosoft\\Litecoin\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -33,7 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Majestic\\Litecoin\\Providers\\ServiceProvider"
+                "Gegosoft\\Litecoin\\Providers\\ServiceProvider"
             ]
         }
     }

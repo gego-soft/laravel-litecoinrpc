@@ -1,6 +1,6 @@
 <?php
 
-namespace Majestic\Litecoin\Traits;
+namespace Gegosoft\Litecoin\Traits;
 
 trait Litecoind
 {

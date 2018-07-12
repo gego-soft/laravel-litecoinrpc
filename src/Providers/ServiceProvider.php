@@ -1,8 +1,8 @@
 <?php
 
-namespace Majestic\Litecoin\Providers;
+namespace Gegosoft\Litecoin\Providers;
 
-use Majestic\Litecoin\Client as LitecoinClient;
+use Gegosoft\Litecoin\Client as LitecoinClient;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 class ServiceProvider extends IlluminateServiceProvider

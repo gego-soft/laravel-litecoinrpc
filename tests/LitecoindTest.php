@@ -1,8 +1,8 @@
 <?php
 
 use Orchestra\Testbench\TestCase;
-use Majestic\Litecoin\Traits\Litecoind;
-use Majestic\Litecoin\Client as LitecoinClient;
+use Gegosoft\Litecoin\Traits\Litecoind;
+use Gegosoft\Litecoin\Client as LitecoinClient;
 
 class LitecoindTest extends TestCase
 {

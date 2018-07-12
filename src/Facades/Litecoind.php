@@ -1,6 +1,6 @@
 <?php
 
-namespace Majestic\Litecoin\Facades;
+namespace Gegosoft\Litecoin\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
