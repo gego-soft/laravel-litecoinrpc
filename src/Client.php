@@ -1,6 +1,6 @@
 <?php
 
-namespace Gegosoft\Qtum;
+namespace Gegosoft\Litecoin;
 
 use GuzzleHttp\Client as GuzzleHttp;
 use GuzzleHttp\ClientInterface;

@@ -4,7 +4,7 @@ namespace Gegosoft\Litecoin\Traits;
 
 trait Litecoind
 {
-    public function qtumd()
+    public function litecoind()
     {
         return app('litecoind');
     }

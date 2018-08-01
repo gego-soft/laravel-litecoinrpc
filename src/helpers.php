@@ -6,7 +6,7 @@ if (! function_exists('litecoind')) {
      *
      * @return \Munish\Litecoin\Client
      */
-    function qtumd()
+    function litecoind()
     {
         return app('litecoind');
     }
