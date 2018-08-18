@@ -40,7 +40,7 @@ class Client
         $handlerStack = HandlerStack::create();
         $handlerStack->push(
             Middleware::mapResponse(function (ResponseInterface $response) {
-                return QtumdResponse::createFrom($response);
+                return LitecoindResponse::createFrom($response);
             }),
             'json_response'
         );
