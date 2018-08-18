@@ -40,7 +40,7 @@ class ServiceProvider extends IlluminateServiceProvider
     protected function registerAliases()
     {
         $aliases = [
-            'litecoind' => 'Majestic\Litecoin\Client',
+            'litecoind' => 'Gegosoft\Litecoin\Client',
         ];
 
         foreach ($aliases as $key => $aliases) {
