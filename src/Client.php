@@ -108,13 +108,25 @@ class Client
     public function request($method, $params = [])
     {
         try {
+           $uri='/';
+             //ADD
+          if(count($params)>0)
+           {
+                if(isset($params[0]['wallet']['is_url_wallet']) && $params[0]['wallet']['is_url_wallet']==true)
+                {
+                    $uri=$uri.'wallet/'.$params[0]['wallet']['wallet_name'];
+                    unset($params[0]);
+                    $params = array_values($params);
+                }
+           }
+        
             $json = [
                 'method' => strtolower($method),
                 'params' => (array) $params,
                 'id'     => $this->rpcId++,
             ];
 
-            $response = $this->client->request('POST', '/', ['json' => $json]);
+            $response = $this->client->request('POST', $uri, ['json' => $json]);
 
             if ($response->hasError()) {
                 // throw exception on error
